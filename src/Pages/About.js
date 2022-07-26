@@ -28,6 +28,9 @@ function About() {
             <h3>Documentacion</h3>
             <br/>
             <p>La documentacion de como fue realizado el proyecto esta disponible en el siguiente enlace</p>
+            <br/>
+            <a href="https://github.com/josrenyer/RickAndMorty-Random/blob/main/README.md" rel="noreferrer" target="_blank"><p>Documentacion en Github</p></a>
+            <br/>
         </div>
 
 
