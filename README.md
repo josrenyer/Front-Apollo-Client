@@ -106,7 +106,7 @@ root.render(
 
 Paso 2:Creamos la carpeta Pages donde estara ubicado Home y Abaout.
 
-<img src="./imagen1.png"/>
+<img src="./src/imagen1.png"/>
 
 - Paso 3: Ir a App y solicitar las instancias `{Route, Routes}`  e importar las pages Home y Aabout para poder generar las rutas.
 
@@ -169,7 +169,7 @@ Comenzaremos creando el `Container` con styled-components.
 
 Para ello primero crearemos la carpeta Styles que estara ubicada dentro de la carpeta src, quedando de la siguiente manera
 
-<img src="./imagen2.png"/>
+<img src="./src/imagen2.png"/>
 
 luego en el archivo index.js de la carpeta Styles estaremos importando `styled-components` para luego crear el Container y darles los valores que veremos a continuacion:
 
