@@ -31,8 +31,6 @@ function Home() {
 
   const [character, { called, loading, data }]= useLazyQuery(Character)
 
-  console.log("data:",data, " loading:", loading, " called:", called)
-
   const [generator, setGenerador]=useState(Math.floor(Math.random() * 826))
   const [his, setHis]=useState({
     character:[]
@@ -63,7 +61,6 @@ function Home() {
     }
   },[data])
 
-  console.log("his del home", his)
 
     return <>
         <ContainerCard>
