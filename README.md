@@ -48,7 +48,21 @@ Adicionalmente instalaremos [react-router-dom](https://github.com/remix-run/reac
 
 - npm i react-router-dom
 
-### Inicializamos el Usuario de Apollo
+
+## GraphQL
+
+Un lenguaje de consulta para la API
+
+GraphQL es un lenguaje de consulta para API y un tiempo de ejecución para satisfacer esas consultas con sus datos existentes. GraphQL proporciona una descripción completa y comprensible de los datos en su API, brinda a los clientes el poder de pedir exactamente lo que necesitan y nada más, facilita la evolución de las API con el tiempo y permite potentes herramientas de desarrollo.
+
+
+Pida lo que necesita, obtenga exactamente eso
+
+Envía una consulta graphQL a tu API y obtén exactamente lo que necesitas, nada más y nada menos. Las consultas graphQL siempre devuelven resultados predecibles. Las aplicaciones que usan GraphQL son rápidas y estables porque controlan los datos que obtienen, no el servidor.
+
+para mas informacion visitar la documentacion oficial [GraphQL](https://graphql.org/)
+
+## Inicializamos el Usuario de Apollo
 
 ¿Que es Apollo?
 
