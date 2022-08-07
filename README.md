@@ -1,10 +1,22 @@
 # Documentacion
 
+  A continuacion veran un paso a paso de como se creo la app, obteniendo informacion de los sitios oficionales e informacion de varios tutoriales de canales como midudev entre otros.
+
 ## Deploy
 
 [![](https://img.icons8.com/color/48/000000/launched-rocket--v1.png)](https://rick-and-morty-random-seven.vercel.app/) Front
 
+## Objetivo
+
+La aplicación debe traer datos de un personaje al azar utilizando la API GraphQL de rick and morty. El usuario debe ser capaz de generar tantos personajes como desee, y, además, mantener un historial de los personajes que aparecieron previamente, con la posibilidad de ver de nuevo los datos de un personaje que ya ha aparecido.
+
 ## Primeros pasos
+
+### Creacion del proyecto 
+
+Para crear el proyecto con React es necesario realizar la instalacion de la siguiente manera:
+
+`npx create-react-app RickAndMorty`
 
 ### Eliminar archivos
 
@@ -315,4 +327,71 @@ character({variables:{random: generator}})
 
 generator sera un numero que la variable random tomara como ID para pasarla en la query como se indico anterioremante.
 
+verificando la cantidad de personajes que posee la api (826) procederemos a crear una variable que los contenga y se pueda cambiar cada vez que lo deseamos generando algun evento. Para estp usaremos los hooks que nos facilita react como `useState` 
 
+
+```javascript
+const [generator, setGenerador]=useState(Math.floor(Math.random() * 826))
+```
+
+### handle
+
+Funcion que ejecutaremos para realizar la consulta con el cliente de apollo.
+
+```javascript
+  const handle=(e)=>{
+   e.preventDefault()
+
+    character({variables:{random: generator}}) // ejecutar la funcion de apollo enviandole una 
+                                                 //variable random, para luego setearle una nueva.
+
+    setGenerador(Math.floor(Math.random() * 826))
+
+    if(indice!==null){
+      setIndice(null)
+    }
+
+  }
+```
+
+### His
+
+En el estado his estaremos guardando los personajes que se lleguen a la data de apollo mediante el hooks `useEffect`
+
+```javascript
+useEffect(()=>{
+    if(data){ //si data existe (un personaje) se estara seteando al estado his
+     setHis({
+      ...his,
+      character:[data.charactersByIds[0],...his.character]
+    })
+    }
+  },[data])//estara atento a los cambios de data para hacer la actulizacion 
+```
+
+### Mostrar Personajes
+
+Para mostrar los personajes existente les estaremos pasando mediante pros el estado his al componente Card, el cual primero verificara si hay algun elemento en el array de character para luego mostrarlo.
+
+
+```javascript
+const Card =({ his, indice})=>{
+
+
+  if(his.character && his.character.length > 0){
+    if(indice===null){
+    return <>
+```
+
+
+### History
+
+Para mostrar los personajes generados les estaremos pasando mediante pros el estado his al componente History, el cual primero verificara si hay algun elemento en el array de character para luego mostrarlo.
+
+```javascript
+{his && his.character.length > 0 ?
+          <History data={his.character} setear={setIndice}/>
+          :
+          null
+        }
+```
